@@ -13,3 +13,5 @@ def mvnBuild(testType) {
         jacoco execPattern: 'target/**.exec'
     }
 }
+
+return this;

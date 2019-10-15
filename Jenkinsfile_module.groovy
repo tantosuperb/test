@@ -1,6 +1,6 @@
 
 
-def mvnBuild(testType)
+def mvnBuild(testType) {
     stage('build') {
         withEnv(["PATH+MAVEN=${tool 'mvn-3.6.0'}/bin"]) {
             sh 'mvn --version'

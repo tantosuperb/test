@@ -56,7 +56,7 @@ public class HelloAppTest {
         }
     }
 
-    @Test
+    //@Test
     public void testTooHighArgument() {
         String[] args = {"999"};
 
@@ -69,7 +69,7 @@ public class HelloAppTest {
         }
     }
 
-    @Test
+    //@Test
     public void testDefaultArgument() {
         // Passing no arguments should work.
         String[] args = {};

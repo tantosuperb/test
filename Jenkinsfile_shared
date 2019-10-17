@@ -1,0 +1,4 @@
+@Library('demo')_
+
+echo 'call library'
+mvn()

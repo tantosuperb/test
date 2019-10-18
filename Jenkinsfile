@@ -5,7 +5,7 @@ node {
     
     stage('build') {
         //withEnv(["PATH+MAVEN=${tool 'apache-maven-3.3.9'}/bin"]) {
-        withEnv(["PATH+MAVEN=${tool 'apache-maven-3.6.0'}/bin"]) {
+        withEnv(["PATH+MAVEN=${tool 'mvn-3.6.0'}/bin"]) {
             sh 'mvn --version'
             sh "mvn clean ${params.testType}"
         }

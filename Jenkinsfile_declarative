@@ -2,7 +2,7 @@ pipeline {
   agent any
   tools {
     maven 'mvn-3.6.0'
-    jdk 'jdk11'
+    jdk 'openjdk11'
   }
   parameters {
     string defaultValue: 'test', name: 'testType'
@@ -18,7 +18,9 @@ pipeline {
   }
   
   post {
-    junit 'target/surefire-reports/*.xml'
-    jacoco execPattern: 'target/**.exec'
+    always {
+      junit 'target/surefire-reports/*.xml'
+      jacoco execPattern: 'target/**.exec'
+    }
   }
 }

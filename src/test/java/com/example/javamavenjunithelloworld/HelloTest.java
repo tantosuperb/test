@@ -46,13 +46,13 @@ public class HelloTest {
         assertThat(os.toString(), is(equalTo(goal)));
     }
 
-    //@Test
+    @Test
     public void testIllegalArgumentForHelloTooMuch() {
         Hello hi = new Hello();
         assertThrows(IllegalArgumentException.class, () -> hi.setTimes(Hello.MAXIMUM_AMOUNT_OF_TIMES + 1));
     }
 
-    //@Test
+    @Test
     public void testIllegalArgumentForHelloNegative() {
         Hello hi = new Hello();
         assertThrows(IllegalArgumentException.class, () -> hi.setTimes(-1));

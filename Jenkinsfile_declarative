@@ -1,0 +1,24 @@
+pipeline {
+  agent any
+  tools {
+    maven 'mvn-3.6.0'
+    jdk 'jdk11'
+  }
+  parameters {
+    string defaultValue: 'test', name: 'testType'
+  }
+ 
+  
+  stages {
+    stage('build') {
+      steps {
+        sh "mvn clean ${params.testType}"
+      }
+    }
+  }
+  
+  post {
+    junit 'target/surefire-reports/*.xml'
+    jacoco execPattern: 'target/**.exec'
+  }
+}

@@ -1,5 +1,5 @@
 node('master') {
  checkout scm
- def m = load('Jenkinsfile_module.groovy')
+ def m = load('mvn_build.groovy')
  m.mvnBuild("test") 
 }
